@@ -1,3 +1,4 @@
+/* #region Dialog styles */
 .artist-modal {
   padding: 0;
   border: none;
@@ -74,6 +75,12 @@
   }
 }
 
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+/* #endregion */
+
+/* #region Buttons styles */
 .modal-btn-close {
   position: absolute;
   top: 16px;
@@ -100,11 +107,13 @@
   opacity: 0.6;
 }
 
-.modal-btn-close:focus {
+.modal-btn-close:focus-visible {
   outline: none;
   opacity: 0.2;
 }
+/* #endregion */
 
+/* #region Artist-content styles */
 .artist-title {
   font-size: 20px;
   text-align: center;
@@ -157,6 +166,9 @@
   }
 }
 
+/* #endregion */
+
+/* #region Meta styles */
 .meta {
   margin: 0;
   padding: 0;
@@ -172,9 +184,16 @@
   }
 }
 
+dd {
+  margin: 0;
+}
+
 dt {
   font-weight: 600;
 }
+/* #endregion */
+
+/* #region Biography styles */
 
 .biography-caption {
   font-weight: 600;
@@ -195,8 +214,14 @@ dt {
     max-height: 135px;
   }
 }
+/* #endregion */
 
+/* #region Genres styles */
 .genres-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
   font-size: 16px;
 }
 
@@ -207,8 +232,9 @@ dt {
   display: inline-block;
   background: rgba(255, 255, 255, 0);
 }
+/* #endregion */
 
-/* #region Albums */
+/* #region Albums styles */
 
 .albums-title {
   font-weight: 700;
@@ -262,6 +288,9 @@ dt {
   margin-bottom: 12px;
 }
 
+/* #endregion */
+
+/* #region Tracks styles */
 .tracks-table {
   border-collapse: collapse;
   min-width: 250px;
@@ -326,17 +355,4 @@ dt {
   outline: none;
   opacity: 0.2;
 }
-
 /* #endregion */
-
-/* #region reset */
-dd {
-  margin: 0;
-}
-/* #endregion */
-
-/* ! Цей стиль для скролу треба буде видалити і написати через JS заборону скролу сторінки під модальним вікном (GPT каже, що цей варіант через CSS підтримується не всіма браузерами) */
-
-body:has(dialog[open]) {
-  overflow: hidden;
-}
