@@ -55,6 +55,7 @@
   width: 100%;
   height: 177px;
   object-fit: cover;
+  object-position: top;
   border-radius: 16px;
 }
 
@@ -94,6 +95,11 @@
 
 .artist-card-desc {
   margin-bottom: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
 }
 
 .artist-card-link {
