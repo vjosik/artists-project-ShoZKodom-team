@@ -1,0 +1,39 @@
+<dialog class="feedback-modal">
+  <button type="button" class="menu-close-btn js-close-btn">
+    <svg class="close-icon" width="32" height="32">
+      <use href="../assets/icons/sprite.svg#icon-x"></use>
+    </svg>
+  </button>
+  <h2 id="feedback-title" class="feedback-title">Submit feedback</h2>
+  <form class="feedback-form" autocomplete="on">
+    <div class="form-field">
+      <label class="feedback-label" for="feedback-name">Name</label>
+      <input
+        class="feedback-input"
+        id="feedback-name"
+        name="name"
+        type="text"
+        placeholder="Emily"
+        required
+      />
+    </div>
+
+    <div class="form-field">
+      <label class="feedback-label" for="feedback-message">Message</label>
+      <textarea
+        class="feedback-textarea"
+        id="feedback-message"
+        name="message"
+        rows="5"
+        placeholder="Type your message..."
+        required
+      ></textarea>
+    </div>
+
+    <div class="rating">
+      <div class="rating-star" id="rating"></div>
+    </div>
+
+    <button class="feedback-submit btn-hover" type="submit">Submit</button>
+  </form>
+</dialog>
