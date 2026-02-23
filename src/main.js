@@ -12,11 +12,5 @@ import { createFeedbackList } from '../src/js/feedback/feedbacks';
 import './js/artist/render-artist';
 import './js/close-open.js/mobile-menu';
 import './js/components/modal-artist/modal';
-<<<<<<< HEAD
 
 fetchFeetbacks().then(createFeedbackList);
-=======
-import './js/utills/scrolling';
-
-import 'loaders.css/loaders.min.css';
->>>>>>> e058d25ab46034c69dc64978bacb8ba06c1fce55
