@@ -10,5 +10,7 @@ export function fetchFeetbacks(page = 1, limit = 10) {
 }
 
 export function sendFeedbacks(feedbackData) {
+  console.log('📤 Sending to backend:', feedbackData);
+
   return http.post('/feedbacks', feedbackData);
 }

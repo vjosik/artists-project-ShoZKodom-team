@@ -1,4 +1,6 @@
 .feedback-modal {
+  margin: auto;
+  min-width: 320px;
   padding: 0;
   border: none;
   background-color: transparent;

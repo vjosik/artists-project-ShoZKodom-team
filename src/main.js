@@ -14,4 +14,4 @@ import './js/close-open.js/mobile-menu';
 import './js/components/modal-artist/modal';
 import './js/feedback/feedback-modal';
 
-fetchFeedbacks().then(createFeedbackList);
+fetchFeetbacks().then(createFeedbackList);

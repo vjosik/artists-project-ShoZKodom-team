@@ -32,6 +32,7 @@ dialog.addEventListener('click', e => {
 
 dialog.addEventListener('cancel', e => {
   e.preventDefault();
+
   closeModal();
 });
 
