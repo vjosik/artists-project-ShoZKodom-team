@@ -1,6 +1,7 @@
 /* #region Dialog styles */
 .artist-modal {
   padding: 0;
+  margin: 64px auto 0;
   border: none;
   border-radius: 16px;
   outline: none;
