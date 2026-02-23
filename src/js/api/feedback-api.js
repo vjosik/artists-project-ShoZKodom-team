@@ -9,10 +9,8 @@ export function fetchFeetbacks(page = 1, limit = 10) {
   });
 }
 
-export function sendFeetbacks(feedBackData) {
-  return http.post('/feedbacks', {
-    data: {
-      feedBackData,
-    },
-  });
+export function sendFeedbacks(feedbackData) {
+  console.log('📤 Sending to backend:', feedbackData);
+
+  return http.post('/feedbacks', feedbackData);
 }
