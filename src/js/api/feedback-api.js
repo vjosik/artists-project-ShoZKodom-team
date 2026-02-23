@@ -9,10 +9,6 @@ export function fetchFeetbacks(page, limit) {
   });
 }
 
-export function sendFeetbacks(feedBackData) {
-  return http.post('/feedbacks', {
-    data: {
-      feedBackData,
-    },
-  });
+export function sendFeedbacks(feedbackData) {
+  return http.post('/feedbacks', feedbackData);
 }

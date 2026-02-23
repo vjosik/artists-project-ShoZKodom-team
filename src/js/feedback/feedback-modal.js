@@ -1,8 +1,11 @@
 import Raty from 'raty-js';
+import { sendFeedbacks } from '../api/feedback-api';
+
 const dialog = document.querySelector('.feedback-modal');
 const openBtn = document.querySelector('.btn');
 const form = document.querySelector('.feedback-form');
 const STORAGE_KEY = 'feedback-draft';
+const submitBtn = document.querySelector('.feedback-submit');
 let ratyInstance;
 // !!! DELETE
 const STAR_ON_SVG = `
@@ -17,25 +20,15 @@ const STAR_OFF_SVG = `
 </svg>
 `;
 
-const STAR_HALF_SVG = `
-<svg width="24" height="24" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <clipPath id="halfClip">
-      <rect x="0" y="0" width="10" height="19"></rect>
-    </clipPath>
-  </defs>
-  <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z" fill="white"/>
-  <path clip-path="url(#halfClip)" d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z" fill="#764191"/>
-</svg>
-`;
 const toDataUri = svg =>
   `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 
 const STAR_ON = toDataUri(STAR_ON_SVG);
 const STAR_OFF = toDataUri(STAR_OFF_SVG);
-const STAR_HALF = toDataUri(STAR_HALF_SVG);
 
 // !!! DELETE
+
+//? OPEN/CLOSE MODAL
 
 const ANIMATION_DURATION = 300;
 
@@ -44,6 +37,7 @@ openBtn.addEventListener('click', () => {
   dialog.showModal();
   initFormRating();
   restoreDraft();
+  checkFormValidity();
 });
 
 dialog.addEventListener('click', e => {
@@ -71,11 +65,12 @@ function closeModal() {
   }, ANIMATION_DURATION);
 }
 
+//? STARS
 export function initFormRating() {
   const star = document.querySelector('.rating-star');
   if (!star) return;
 
-  if (star.dataset.ratyInitialized === 'true') return;
+  if (star.dataset.ratyInitialized) return;
   star.dataset.ratyInitialized = 'true';
 
   ratyInstance = new Raty(star, {
@@ -96,28 +91,39 @@ export function initFormRating() {
   ratyInstance.init();
 }
 
+//? LISTENERS
+
 form.addEventListener('submit', onSubmitForm);
 form.addEventListener('input', saveDraft);
+form.addEventListener('input', checkFormValidity);
+checkFormValidity();
+form.elements.name.addEventListener('blur', validateNameField);
+form.elements.message.addEventListener('blur', validateMessageField);
 
-function onSubmitForm(event) {
+//? SEND FORM
+
+async function onSubmitForm(event) {
   event.preventDefault();
 
   const name = event.target.elements.name.value.trim();
   const message = event.target.elements.message.value.trim();
   const rating = ratyInstance?.score() ?? 0;
 
-  const feedback = {
-    id: Date.now(),
-    name,
-    message,
-    rating,
-  };
-
-  event.target.reset();
-  ratyInstance.score(0);
-  clearDraft();
-  closeModal();
+  const feedback = { name, descr: message, rating };
+  try {
+    await sendFeedbacks(feedback);
+    event.target.reset();
+    checkFormValidity();
+    ratyInstance?.score(0);
+    clearDraft();
+    closeModal();
+  } catch (error) {
+    console.log(error);
+  }
 }
+
+//? LOCAL STORAGE
+
 function saveDraft() {
   const draft = {
     name: form.elements.name.value,
@@ -138,4 +144,53 @@ function restoreDraft() {
 
 function clearDraft() {
   localStorage.removeItem(STORAGE_KEY);
+}
+
+//? VALIDATE FORM
+function validateNameField() {
+  const input = form.elements.name;
+  const value = input.value.trim();
+
+  removeFieldError(input);
+
+  if (value.length < 3) {
+    showError(input, 'Name must be at least 3 characters');
+  }
+}
+
+function validateMessageField() {
+  const input = form.elements.message;
+  const value = input.value.trim();
+
+  removeFieldError(input);
+
+  if (value.length < 10) {
+    showError(input, 'Message must be at least 10 characters');
+  }
+}
+
+function showError(input, message) {
+  input.classList.add('input-error');
+
+  const error = document.createElement('p');
+  error.className = 'error-text';
+  error.textContent = message;
+
+  input.parentElement.appendChild(error);
+}
+
+function removeFieldError(input) {
+  input.classList.remove('input-error');
+
+  const error = input.parentElement.querySelector('.error-text');
+  if (error) error.remove();
+}
+
+function checkFormValidity() {
+  const name = form.elements.name.value.trim();
+  const message = form.elements.message.value.trim();
+
+  const isValid = name.length >= 3 && message.length >= 10;
+
+  submitBtn.disabled = !isValid;
 }
