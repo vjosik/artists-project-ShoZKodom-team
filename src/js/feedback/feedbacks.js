@@ -1,6 +1,8 @@
 import './feedbacks-swiper';
 import { initFeedbackRatings } from '../components/star-rating';
 
+const feedbackListEl = document.querySelector('.feedback-swiper-wrapper');
+
 export function createFeedbackList({ data }) {
   const markup = data
     .map(
