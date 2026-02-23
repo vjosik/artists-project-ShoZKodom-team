@@ -1,7 +1,7 @@
 import { fetchArtistsById } from '../../api/artists-api';
 import refs from '../../utills/refs';
 import {
-  initScroll,
+  initElementScroll,
   lockBodyScroll,
   unlockBodyScroll,
 } from '../../utills/scrolling';
@@ -24,9 +24,17 @@ export async function onArtistListClick(event) {
   try {
     const artistInfo = await fetchArtistsById(artistId);
     renderArtistModalContent(artistInfo, refs.artistModal);
+
     refs.artistModal.showModal();
-    initScroll('.js-artist-modal');
     lockBodyScroll();
+
+    const scrollModal = refs.artistModal.querySelector('.js-modal-scroll');
+    if (scrollModal) initElementScroll(scrollModal);
+
+    const scrollBioDescr = refs.artistModal.querySelector(
+      '.biography-descr-wrapper'
+    );
+    if (scrollBioDescr) initElementScroll(scrollBioDescr);
 
     const closeBtn = refs.artistModal.querySelector('.js-modal-btn-close');
     if (!closeBtn) return;

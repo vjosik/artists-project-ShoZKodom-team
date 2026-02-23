@@ -32,6 +32,9 @@
   transition:
     transform 0.3s ease-in,
     opacity 0.3s ease-in;
+
+  overflow-y: auto;
+  max-height: 90vh; /* КРИТИЧНО */
 }
 
 .artist-modal[open] .artist-modal-content {
@@ -221,19 +224,19 @@ dt {
   font-weight: 600;
   font-size: 18px;
 }
-.biography-descr {
+.biography-descr-wrapper {
   max-height: 297px;
   overflow-y: auto;
 }
 
 @media only screen and (min-width: 768px) {
-  .biography-descr {
+  .biography-descr-wrapper {
     max-height: 108px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
-  .biography-descr {
+  .biography-descr-wrapper {
     max-height: 135px;
   }
 }

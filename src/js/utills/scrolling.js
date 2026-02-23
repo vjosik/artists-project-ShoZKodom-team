@@ -1,32 +1,13 @@
 import 'overlayscrollbars/overlayscrollbars.css';
 import { OverlayScrollbars, SizeObserverPlugin } from 'overlayscrollbars';
 
-// const osBody = OverlayScrollbars(document.body, {
-//   scrollbars: {
-//     autoHide: 'scroll',
-//     autoHideDelay: 600,
-//     dragScroll: true,
-//   },
-//   plugins: {
-//     SizeObserverPlugin: true,
-//   },
-// });
+let osBody = null;
+const osElements = new Map();
 
-export function lockBodyScroll() {
-  osBody.options({
-    overflow: { x: 'hidden', y: 'hidden' },
-  });
-}
-
-export function unlockBodyScroll() {
-  osBody.options({
-    overflow: { x: 'hidden', y: 'scroll' },
-  });
-}
-export function initScroll(el) {
+export function initBodyScroll(el) {
   if (!el) return null;
 
-  return OverlayScrollbars(el, {
+  osBody = OverlayScrollbars(el, {
     scrollbars: {
       autoHide: 'scroll',
       autoHideDelay: 300,
@@ -36,6 +17,46 @@ export function initScroll(el) {
       SizeObserverPlugin: true,
     },
   });
+
+  return osBody;
 }
 
-initScroll(document.body);
+export function initElementScroll(el) {
+  if (!el) return null;
+
+  if (osElements.has(el)) {
+    return osElements.get(el);
+  }
+
+  const instance = OverlayScrollbars(el, {
+    scrollbars: {
+      autoHide: 'scroll',
+      autoHideDelay: 300,
+      dragScroll: true,
+    },
+    plugins: {
+      SizeObserverPlugin: true,
+    },
+  });
+
+  osElements.set(el, instance);
+  return instance;
+}
+
+export function lockBodyScroll() {
+  if (!osBody) return;
+  osBody.options({
+    overflow: { x: 'hidden', y: 'hidden' },
+  });
+}
+
+export function unlockBodyScroll() {
+  if (!osBody) return;
+  osBody.options({
+    overflow: { x: 'hidden', y: 'scroll' },
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initBodyScroll(document.body);
+});

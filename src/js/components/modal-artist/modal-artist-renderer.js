@@ -1,5 +1,3 @@
-import { initScroll } from '../../utills/scrolling';
-
 export function renderArtistModalContent(artistData = {}, el) {
   const genresMarkup = Array.isArray(artistData.genres)
     ? artistData.genres
@@ -30,7 +28,7 @@ export function renderArtistModalContent(artistData = {}, el) {
             <dd>${artistData.strCountry ?? 'Unknown'}</dd>
           </div>`;
 
-  const markup = `<div class="artist-modal-content" data-artist-id="${artistData._id}">
+  const markup = `<div class="artist-modal-content js-modal-scroll" data-artist-id="${artistData._id}">
     <button
       class="modal-btn-close js-modal-btn-close"
       type="button"
@@ -45,8 +43,8 @@ export function renderArtistModalContent(artistData = {}, el) {
      <div class="artist-ill-wrapper">
       <img
         class="artist-ill"
-        src="${artistData.strArtistThumb}"
-        alt="${artistData.strArtist}"
+        src="${artistData.strArtistThumb ?? ''}"
+        alt="${artistData.strArtist ?? 'Artist image'}"
       />
       </div>
 
@@ -56,9 +54,11 @@ export function renderArtistModalContent(artistData = {}, el) {
         </dl>
         <div class="biography">
           <h3 class="biography-caption">Biography</h3>
+           <div class="biography-descr-wrapper">
           <p class="biography-descr">
             ${artistData.strBiographyEN ?? 'No biography available'}
           </p>
+          </div>
         </div>
 
         <ul class="genres-list">
@@ -68,5 +68,4 @@ export function renderArtistModalContent(artistData = {}, el) {
     </div>
     </div>`;
   el.innerHTML = markup;
-  initScroll('.biography-descr');
 }
