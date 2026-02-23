@@ -2,6 +2,7 @@ import { fetchArtists } from '../api/artists-api';
 import '../../css/artist.css';
 import { ARTIST_LIMIT, DEFAULT_PAGE } from '../config/config';
 import { getPaginationParams, nextPage } from './pagination';
+import { examplTost } from '../components/special-toast';
 
 const list = document.querySelector('.js-artists');
 const loadMoreBtn = document.querySelector('.load-more-btn');
@@ -45,30 +46,38 @@ export async function renderArtist(params) {
   const listArtist = document.querySelector('.js-artists');
   if (!listArtist) return;
 
-  const res = await fetchArtists(params);
-  // console.log('response:', res);
+  try {
+    const res = await fetchArtists(params);
+    // console.log('response:', res);
 
-  const artists = res.artists;
-  // listArtist.innerHTML = loadArtistCard(artists);
-  listArtist.insertAdjacentHTML('beforeend', loadArtistCard(artists));
+    const artists = res.artists;
+    // listArtist.innerHTML = loadArtistCard(artists);
+    listArtist.insertAdjacentHTML('beforeend', loadArtistCard(artists));
 
-  if (loadMoreBtn) {
-    if (artists.length < params.limit) {
-      loadMoreBtn.classList.add('is-disabled');
-    } else {
-      loadMoreBtn.classList.remove('is-disabled');
+    if (loadMoreBtn) {
+      if (artists.length < params.limit) {
+        loadMoreBtn.classList.add('is-disabled');
+      } else {
+        loadMoreBtn.classList.remove('is-disabled');
+      }
     }
+  } catch (error) {
+    examplTost(error);
   }
 }
 
-if (list) renderArtist({ limit: ARTIST_LIMIT, page: DEFAULT_PAGE });
+try {
+  if (list) renderArtist({ limit: ARTIST_LIMIT, page: DEFAULT_PAGE });
 
-if (loadMoreBtn) {
-  loadMoreBtn.addEventListener('click', async () => {
-    if (loadMoreBtn.classList.contains('is-disabled')) return;
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', async () => {
+      if (loadMoreBtn.classList.contains('is-disabled')) return;
 
-    nextPage();
-    const params = getPaginationParams();
-    await renderArtist(params);
-  });
+      nextPage();
+      const params = getPaginationParams();
+      await renderArtist(params);
+    });
+  }
+} catch (error) {
+  examplTost(error);
 }

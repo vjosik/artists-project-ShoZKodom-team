@@ -5,6 +5,7 @@ import {
   lockBodyScroll,
   unlockBodyScroll,
 } from '../../utills/scrolling';
+import { examplTost } from '../special-toast';
 import { renderArtistModalContent } from './modal-artist-renderer';
 
 refs.artistList.addEventListener('click', onArtistListClick);
@@ -48,6 +49,7 @@ export async function onArtistListClick(event) {
     closeBtn.addEventListener('click', onCloseClick);
   } catch (error) {
     console.error(error.message);
+    examplTost(error);
   }
 }
 
