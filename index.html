@@ -1,11 +1,1105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/artists-project-ShoZKodom-team/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>ArtistsHub</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="./src/assets/fonts/IBMPlexSans.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      href="./src/assets/fonts/Epilogue.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      href="./src/assets/fonts/Roboto.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script type="module" crossorigin src="/artists-project-ShoZKodom-team/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/artists-project-ShoZKodom-team/assets/vendor-9FENM4gb.js">
+    <link rel="stylesheet" crossorigin href="/artists-project-ShoZKodom-team/assets/vendor-CnDQNFgp.css">
+    <link rel="stylesheet" crossorigin href="/artists-project-ShoZKodom-team/assets/index-ChJAhgy_.css">
   </head>
   <body>
-    
+    <header class="header">
+  <div class="container">
+    <nav class="navbar-menu">
+      <a class="logo-link" href="../index.html">
+        <svg class="logo-svg" width="110" height="32">
+          <use href="../assets/icons/sprite.svg#icon-logo1"></use>
+        </svg>
+      </a>
+      <button class="mobil-menu-btn" type="button">
+        <svg class="mobil-menu-svg" width="24" height="24">
+          <use href="../assets/icons/sprite.svg#icon-menu-alt-right"></use>
+        </svg>
+      </button>
+      <ul class="navbar-list">
+        <li class="navbar-item">
+          <a class="navbar-item-link" href="#artist">Artists</a>
+        </li>
+        <li class="navbar-item">
+          <a class="navbar-item-link" href="#about">About Us</a>
+        </li>
+        <li class="navbar-item">
+          <a class="navbar-item-link" href="#reviews">Reviews</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main>
+      <section class="hero section js-loader-container">
+  <div class="container">
+    <div class="hero-wrapper">
+      <h1 class="hero-title" id="hero-title">
+        Discover Your Next Favorite Artist Today
+      </h1>
+      <p class="hero-description">
+        Dive into a world of music discoveries with ArtistsHub - your personal
+        guide to the boundless universe of sound. Explore, filter, and learn
+        about your favorite artists all in one place.
+      </p>
+      <a href="#artist" class="explore-btn button btn-hover">
+        Explore Artists
+        <svg class="arrow" width="24" height="24">
+          <use href="../assets/icons/sprite.svg#icon-hero-arrow"></use>
+        </svg>
+      </a>
+    </div>
+
+    <div class="hero-photo-box">
+      <div class="hero-column-up">
+        <picture class="hero-image-up">
+          <source
+            media="(max-width: 767px)"
+            srcset="/artists-project-ShoZKodom-team/assets/mobile-1-6ndI_VhV.webp 1x, /artists-project-ShoZKodom-team/assets/mobile-1@2x-uZhvvAuA.webp 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet01-Blm4peRy.webp 1x, /artists-project-ShoZKodom-team/assets/hero-tablet01@2x-CisJbump.webp 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop01-CLv0469g.webp 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop01@2x-E0HkFD0G.webp 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop01-CLv0469g.webp"
+            alt="hero-photo"
+          />
+        </picture>
+        <picture class="hero-image-up">
+          <source
+            media="(max-width: 767px)"
+            srcset="/artists-project-ShoZKodom-team/assets/mobile-2-CqlM9gnP.webp 1x, /artists-project-ShoZKodom-team/assets/mobile-2@2x-Cx4eX1MA.webp 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet02-DFWwIW9G.webp 1x, /artists-project-ShoZKodom-team/assets/hero-tablet02@2x-DC4Q_O6Z.webp 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop02-CHEd_Oyl.webp 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop02@2x-B7o5ApZ4.webp 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop02-CHEd_Oyl.webp"
+            alt="hero-photo"
+          />
+        </picture>
+        <picture class="hero-image-up">
+          <source
+            media="(max-width: 767px)"
+            srcset="data:image/webp;base64,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 1x, /artists-project-ShoZKodom-team/assets/mobile-3@2x-DF_YV8e9.webp 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet03-14wdXxZ2.webp 1x, /artists-project-ShoZKodom-team/assets/hero-tablet03@2x-BD1xPYh4.webp 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop03-B4ktzIJB.webp 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop03@2x-VeFUHk_q.webp 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop03-B4ktzIJB.webp"
+            alt="hero-photo"
+          />
+        </picture>
+
+        <picture class="hero-image-up">
+          <source
+            media="(max-width: 767px)"
+            srcset="/artists-project-ShoZKodom-team/assets/mobile-1-6ndI_VhV.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/mobile-1@2x-uZhvvAuA.webp?v=1 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet01-Blm4peRy.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-tablet01@2x-CisJbump.webp?v=1 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop01-CLv0469g.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop01@2x-E0HkFD0G.webp?v=1 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop01-CLv0469g.webp?v=1"
+            alt="hero-photo"
+          />
+        </picture>
+        <picture class="hero-image-up">
+          <source
+            media="(max-width: 767px)"
+            srcset="/artists-project-ShoZKodom-team/assets/mobile-2-CqlM9gnP.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/mobile-2@2x-Cx4eX1MA.webp?v=1 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet02-DFWwIW9G.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-tablet02@2x-DC4Q_O6Z.webp?v=1 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop02-CHEd_Oyl.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop02@2x-B7o5ApZ4.webp?v=1 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop02-CHEd_Oyl.webp?v=1"
+            alt="hero-photo"
+          />
+        </picture>
+        <picture class="hero-image-up">
+          <source
+            media="(max-width: 767px)"
+            srcset="data:image/webp;base64,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 1x, /artists-project-ShoZKodom-team/assets/mobile-3@2x-DF_YV8e9.webp?v=1 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet03-14wdXxZ2.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-tablet03@2x-BD1xPYh4.webp?v=1 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop03-B4ktzIJB.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop03@2x-VeFUHk_q.webp?v=1 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop03-B4ktzIJB.webp?v=1"
+            alt="hero-photo"
+          />
+        </picture>
+
+        <picture class="hero-image-up">
+          <source
+            media="(max-width: 767px)"
+            srcset="/artists-project-ShoZKodom-team/assets/mobile-1-6ndI_VhV.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/mobile-1@2x-uZhvvAuA.webp?v=1 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet01-Blm4peRy.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-tablet01@2x-CisJbump.webp?v=1 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop01-CLv0469g.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop01@2x-E0HkFD0G.webp?v=1 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop01-CLv0469g.webp?v=1"
+            alt="hero-photo"
+          />
+        </picture>
+        <picture class="hero-image-up">
+          <source
+            media="(max-width: 767px)"
+            srcset="/artists-project-ShoZKodom-team/assets/mobile-2-CqlM9gnP.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/mobile-2@2x-Cx4eX1MA.webp?v=1 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet02-DFWwIW9G.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-tablet02@2x-DC4Q_O6Z.webp?v=1 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop02-CHEd_Oyl.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop02@2x-B7o5ApZ4.webp?v=1 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop02-CHEd_Oyl.webp?v=1"
+            alt="hero-photo"
+          />
+        </picture>
+        <picture class="hero-image-up">
+          <source
+            media="(max-width: 767px)"
+            srcset="data:image/webp;base64,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 1x, /artists-project-ShoZKodom-team/assets/mobile-3@2x-DF_YV8e9.webp?v=1 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet03-14wdXxZ2.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-tablet03@2x-BD1xPYh4.webp?v=1 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop03-B4ktzIJB.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop03@2x-VeFUHk_q.webp?v=1 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop03-B4ktzIJB.webp?v=1"
+            alt="hero-photo"
+          />
+        </picture>
+      </div>
+      <div class="hero-column-down">
+        <picture class="hero-image-down">
+          <source
+            media="(max-width: 767px)"
+            srcset="/artists-project-ShoZKodom-team/assets/mobile-4-CLLA1SNs.webp 1x, /artists-project-ShoZKodom-team/assets/mobile-4@2x-fObdGxKA.webp 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet04-CpB7FSJ4.webp 1x, /artists-project-ShoZKodom-team/assets/hero-tablet04@2x-CGEu-Q4Z.webp 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop04-2RRwbDKv.webp 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop04@2x-vT4fkCij.webp 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop04-2RRwbDKv.webp"
+            alt="hero-photo"
+          />
+        </picture>
+
+        <picture class="hero-image-down">
+          <source
+            media="(max-width: 767px)"
+            srcset="/artists-project-ShoZKodom-team/assets/mobile-5-B4QFH8Io.webp 1x, /artists-project-ShoZKodom-team/assets/mobile-5@2x-DSiGlK9v.webp 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet05-DLrC8Mp4.webp 1x, /artists-project-ShoZKodom-team/assets/hero-tablet05@2x-DdbiONZl.webp 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop05-B7ZJ-1Ef.webp 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop05@2x-CD1Liour.webp 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop05-B7ZJ-1Ef.webp"
+            alt="hero-photo"
+          />
+        </picture>
+
+        <picture class="hero-image-down">
+          <source
+            media="(max-width: 767px)"
+            srcset="/artists-project-ShoZKodom-team/assets/mobile-6-BpU9DDkg.webp 1x, /artists-project-ShoZKodom-team/assets/mobile-6@2x-CkaQ3U3O.webp 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet06-CM1gUfkh.webp 1x, /artists-project-ShoZKodom-team/assets/hero-tablet06@2x-Ch-Bmqyh.webp 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop06-CXa6kQSD.webp 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop06@2x-BSqgwjse.webp 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop06-CXa6kQSD.webp"
+            alt="hero-photo"
+          />
+        </picture>
+
+        <picture class="hero-image-down">
+          <source
+            media="(max-width: 767px)"
+            srcset="/artists-project-ShoZKodom-team/assets/mobile-4-CLLA1SNs.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/mobile-4@2x-fObdGxKA.webp?v=1 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet04-CpB7FSJ4.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-tablet04@2x-CGEu-Q4Z.webp?v=1 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop04-2RRwbDKv.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop04@2x-vT4fkCij.webp?v=1 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop04-2RRwbDKv.webp?v=1"
+            alt="hero-photo"
+          />
+        </picture>
+
+        <picture class="hero-image-down">
+          <source
+            media="(max-width: 767px)"
+            srcset="/artists-project-ShoZKodom-team/assets/mobile-5-B4QFH8Io.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/mobile-5@2x-DSiGlK9v.webp?v=1 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet05-DLrC8Mp4.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-tablet05@2x-DdbiONZl.webp?v=1 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop05-B7ZJ-1Ef.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop05@2x-CD1Liour.webp?v=1 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop05-B7ZJ-1Ef.webp?v=1"
+            alt="hero-photo"
+          />
+        </picture>
+
+        <picture class="hero-image-down">
+          <source
+            media="(max-width: 767px)"
+            srcset="/artists-project-ShoZKodom-team/assets/mobile-6-BpU9DDkg.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/mobile-6@2x-CkaQ3U3O.webp?v=1 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet06-CM1gUfkh.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-tablet06@2x-Ch-Bmqyh.webp?v=1 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop06-CXa6kQSD.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop06@2x-BSqgwjse.webp?v=1 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop06-CXa6kQSD.webp?v=1"
+            alt="hero-photo"
+          />
+        </picture>
+
+        <picture class="hero-image-down">
+          <source
+            media="(max-width: 767px)"
+            srcset="/artists-project-ShoZKodom-team/assets/mobile-4-CLLA1SNs.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/mobile-4@2x-fObdGxKA.webp?v=1 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet04-CpB7FSJ4.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-tablet04@2x-CGEu-Q4Z.webp?v=1 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop04-2RRwbDKv.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop04@2x-vT4fkCij.webp?v=1 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop04-2RRwbDKv.webp?v=1"
+            alt="hero-photo"
+          />
+        </picture>
+
+        <picture class="hero-image-down">
+          <source
+            media="(max-width: 767px)"
+            srcset="/artists-project-ShoZKodom-team/assets/mobile-5-B4QFH8Io.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/mobile-5@2x-DSiGlK9v.webp?v=1 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet05-DLrC8Mp4.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-tablet05@2x-DdbiONZl.webp?v=1 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop05-B7ZJ-1Ef.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop05@2x-CD1Liour.webp?v=1 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop05-B7ZJ-1Ef.webp?v=1"
+            alt="hero-photo"
+          />
+        </picture>
+
+        <picture class="hero-image-down">
+          <source
+            media="(max-width: 767px)"
+            srcset="/artists-project-ShoZKodom-team/assets/mobile-6-BpU9DDkg.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/mobile-6@2x-CkaQ3U3O.webp?v=1 2x"
+          />
+          <source
+            media="(max-width: 1439px)"
+            srcset="/artists-project-ShoZKodom-team/assets/hero-tablet06-CM1gUfkh.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-tablet06@2x-Ch-Bmqyh.webp?v=1 2x"
+          />
+          <source
+            srcset="/artists-project-ShoZKodom-team/assets/hero-dekstop06-CXa6kQSD.webp?v=1 1x, /artists-project-ShoZKodom-team/assets/hero-dekstop06@2x-BSqgwjse.webp?v=1 2x"
+          />
+          <img
+            src="/artists-project-ShoZKodom-team/assets/hero-dekstop06-CXa6kQSD.webp?v=1"
+            alt="hero-photo"
+          />
+        </picture>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="container" id="artist">
+  <div class="artists-section">
+    <div class="artists-section-head">
+      <p class="artists-section-label">Artists</p>
+      <h2 class="artists-section-title">Explore Your New Favorite Artists</h2>
+    </div>
+    <div class="artists-layout">
+      <ul class="artists-list js-artists">
+        <!-- <li class="artist-card" data-id="${id}">
+          <img
+            class="artist-card-img"
+            src="../assets/img/image (1).png"
+            alt="${name}"
+            loading="lazy"
+          />
+          <div class="artist-card-body">
+            <ul class="tag-list">
+              <li class="tags">Alternative</li>
+              <li class="tags">Pop</li>
+              <li class="tags">Rock</li>
+              <li class="tags">Indie</li>
+            </ul>
+            <h3 class="artist-card-name">Ren</h3>
+            <p class="artist-card-desc">
+              A look at the influential figures who shaped jazz music history.
+            </p>
+            <button class="artist-card-link" type="button">
+              Learn More<svg class="icon icon-play" width="20" height="20">
+                <use href="../assets/icons/sprite.svg#icon-play"></use>
+              </svg>
+            </button>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+    <button class="load-more-btn btn-hover" type="button" style="display: none">
+      Load More
+      <svg class="icon icon-arrow" width="20" height="20">
+        <use href="../assets/icons/sprite.svg#icon-right-arrow-alt"></use>
+      </svg>
+    </button>
+  </div>
+</section>
+
+      <section class="section about" id="about">
+  <div class="container about-container">
+    <div class="about-media">
+      <picture>
+        <source
+          type="image/webp"
+          media="(min-width:1440px)"
+          srcset="/artists-project-ShoZKodom-team/assets/about-team-desktop1x-D85SPj_m.webp 1x, /artists-project-ShoZKodom-team/assets/about-team-desktop@2x-l9o_jHHc.webp 2x"
+        />
+
+        <source
+          type="image/webp"
+          media="(min-width:768px)"
+          srcset="/artists-project-ShoZKodom-team/assets/about-team-tablet1x-B_b7jkrw.webp 1x, /artists-project-ShoZKodom-team/assets/about-team-tablet@2x-CQEA18u_.webp 2x"
+        />
+
+        <source
+          type="image/webp"
+          srcset="/artists-project-ShoZKodom-team/assets/about-team-mobile1x-CxbxvASV.webp 1x, /artists-project-ShoZKodom-team/assets/about-team-mobile@2x-V1m8Y7MY.webp 2x"
+        />
+
+        <source
+          type="image/jpeg"
+          media="(min-width:1440px)"
+          srcset="/artists-project-ShoZKodom-team/assets/about-team-desktop1x-bdKGFNlh.jpg 1x, /artists-project-ShoZKodom-team/assets/about-team-desktop@2x-D8mZ4Xmc.jpg 2x"
+        />
+
+        <source
+          type="image/jpeg"
+          media="(min-width:768px)"
+          srcset="/artists-project-ShoZKodom-team/assets/about-team-tablet1x-BItkx1s3.jpg 1x, /artists-project-ShoZKodom-team/assets/about-team-tablet@2x-B5mdEqon.jpg 2x"
+        />
+
+        <img
+          class="about-img"
+          src="/artists-project-ShoZKodom-team/assets/about-team-mobile1x-C4YiYRbY.jpg"
+          srcset="/artists-project-ShoZKodom-team/assets/about-team-mobile@2x-Bc2eGcjF.jpg 2x"
+          alt="ArtistsHub team"
+          loading="lazy"
+        />
+      </picture>
+    </div>
+
+    <div class="about-content">
+      <svg class="about-icon" width="64" height="64">
+        <use href="/artists-project-ShoZKodom-team/assets/sprite-D7egZoH7.svg#icon-logo-icon"></use>
+      </svg>
+
+      <h2 class="about-title">About ArtistsHub</h2>
+
+      <p class="about-text">
+        At ArtistsHub, our mission is to connect music lovers with the artists
+        they adore. We strive to create a vibrant community where discovering
+        new music is as enjoyable as listening to it.
+      </p>
+    </div>
+  </div>
+</section>
+
+      <section class="feedbacks" id="reviews">
+  <h2 class="visually-hidden">Feedbacks our visitors</h2>
+  <div class="container">
+    <div class="feedback-swiper swiper">
+      <ul class="feedback-swiper-wrapper swiper-wrapper">
+        <li class="feedback-swiper-slide swiper-slide">
+          <div class="feedback-card">
+            <div class="feedback-stars-rating" data-score="0"></div>
+            <p class="feedback-text"></p>
+            <p class="feedback-name"></p>
+          </div>
+        </li>
+        <li class="feedback-swiper-slide swiper-slide">
+          <div class="feedback-card">
+            <div class="feedback-stars-rating" data-score="0"></div>
+            <p class="feedback-text"></p>
+            <p class="feedback-name"></p>
+          </div>
+        </li>
+        <li class="feedback-swiper-slide swiper-slide">
+          <div class="feedback-card">
+            <div class="feedback-stars-rating" data-score="0"></div>
+            <p class="feedback-text"></p>
+            <p class="feedback-name"></p>
+          </div>
+        </li>
+        <li class="feedback-swiper-slide swiper-slide">
+          <div class="feedback-card">
+            <div class="feedback-stars-rating" data-score="0"></div>
+            <p class="feedback-text"></p>
+            <p class="feedback-name"></p>
+          </div>
+        </li>
+      </ul>
+      <div class="feedback-swiper-pagination swiper-pagination"></div>
+      <button
+        class="feedback-btn-prev"
+        type="button"
+        aria-label="Попередній відгук"
+      >
+        <svg
+          class="feedback-btn-icon"
+          width="24"
+          height="24"
+          aria-hidden="true"
+        >
+          <use href="/artists-project-ShoZKodom-team/assets/sprite-D7egZoH7.svg#icon-left-arrow-alt"></use>
+        </svg>
+      </button>
+      <button
+        class="feedback-btn-next"
+        type="button"
+        aria-label="Наступний відгук"
+      >
+        <svg
+          class="feedback-btn-icon"
+          width="24"
+          height="24"
+          aria-hidden="true"
+        >
+          <use href="/artists-project-ShoZKodom-team/assets/sprite-D7egZoH7.svg#icon-right-arrow-alt"></use>
+        </svg>
+      </button>
+    </div>
+
+    <button class="btn btn-hover" type="button">Leave feedback</button>
+  </div>
+</section>
+
+    </main>
+
+    <div class="footer-section">
+  <section class="footer container">
+    <div class="footer-wrapper">
+      <nav class="footer-nav">
+        <a href="../index.html" class="footer-link-logo">
+          <svg class="footer-icon-logo" width="116" height="36" fill="">
+            <use href="../assets/icons/sprite.svg#icon-logo-purple"></use>
+          </svg>
+        </a>
+
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#artist" class="footer-nav-link">Artists</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="footer-nav-link">About us</a>
+          </li>
+          <li class="nav-item">
+            <a href="#reviews" class="footer-nav-link">Reviews</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-social">
+      <ul class="footer-socials-list">
+        <li class="social-box">
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            class="social-link"
+            rel="noopener noreferrer"
+          >
+            <svg class="footer-icon" width="24" height="24" fill="white">
+              <use href="../assets/icons/sprite.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-box">
+          <a
+            href="https://www.facebook.com/ "
+            target="_blank"
+            class="social-link"
+            rel="noopener noreferrer"
+          >
+            <svg class="footer-icon" width="24" height="24" fill="white">
+              <use href="../assets/icons/sprite.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-box">
+          <a
+            href="https://www.youtube.com/ "
+            target="_blank"
+            class="social-link"
+            rel="noopener noreferrer"
+          >
+            <svg class="footer-icon" width="24" height="24" fill="white">
+              <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <p class="footer-text">&copy; 2025 ArtistsHub. All rights reserved.</p>
+    </div>
+  </section>
+</div>
+
+    <dialog
+  class="artist-modal js-artist-modal"
+  aria-labelledby="artist-title"
+></dialog>
+
+<!-- Albums section -->
+<!-- <section class="albums">
+      <h3 class="albums-title">Albums</h3>
+      <ul class="albums-list">
+        <li class="album">
+          <h4 class="album-title">Ghost Gardens</h4>
+
+          <table class="tracks-table">
+            <thead>
+              <tr>
+                <th scope="col">Track</th>
+                <th scope="col">Time</th>
+                <th scope="col">Link</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Rip Me Apart</td>
+                <td>3:02</td>
+                <td>
+                  <a href="#" aria-label="Play Rip Me Apart"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Dig</td>
+                <td>2:54</td>
+                <td>
+                  <a href="#" aria-label="Play Dig"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Tremor</td>
+                <td>2:02</td>
+                <td>
+                  <a href="#" aria-label="Play Tremor"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Tremor</td>
+                <td>2:02</td>
+                <td>
+                  <a href="#" aria-label="Play Tremor"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Tremor</td>
+                <td>2:02</td>
+                <td>
+                  <a href="#" aria-label="Play Tremor"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li class="album">
+          <h4 class="album-title">Ghost Gardens</h4>
+
+          <table class="tracks-table">
+            <thead>
+              <tr>
+                <th>Track</th>
+                <th>Time</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Rip Me Apart</td>
+                <td>3:02</td>
+                <td>
+                  <a href="#" aria-label="Play Rip Me Apart"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Dig</td>
+                <td>2:54</td>
+                <td>
+                  <a href="#" aria-label="Play Dig"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Tremor</td>
+                <td>2:02</td>
+                <td>
+                  <a href="#" aria-label="Play Tremor"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li class="album">
+          <h4 class="album-title">Ghost Gardens</h4>
+
+          <table class="tracks-table">
+            <thead>
+              <tr>
+                <th>Track</th>
+                <th>Time</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Rip Me Apart</td>
+                <td>3:02</td>
+                <td>
+                  <a href="#" aria-label="Play Rip Me Apart"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Dig</td>
+                <td>2:54</td>
+                <td>
+                  <a href="#" aria-label="Play Dig"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Tremor</td>
+                <td>2:02</td>
+                <td>
+                  <a href="#" aria-label="Play Tremor"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Tremor</td>
+                <td>2:02</td>
+                <td>
+                  <a href="#" aria-label="Play Tremor"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Tremor</td>
+                <td>2:02</td>
+                <td>
+                  <a href="#" aria-label="Play Tremor"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li class="album">
+          <h4 class="album-title">Ghost Gardens</h4>
+
+          <table class="tracks-table">
+            <thead>
+              <tr>
+                <th>Track</th>
+                <th>Time</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Rip Me Apart</td>
+                <td>3:02</td>
+                <td>
+                  <a href="#" aria-label="Play Rip Me Apart"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Dig</td>
+                <td>2:54</td>
+                <td>
+                  <a href="#" aria-label="Play Dig"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Tremor</td>
+                <td>2:02</td>
+                <td>
+                  <a href="#" aria-label="Play Tremor"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Tremor</td>
+                <td>2:02</td>
+                <td>
+                  <a href="#" aria-label="Play Tremor"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Tremor</td>
+                <td>2:02</td>
+                <td>
+                  <a href="#" aria-label="Play Tremor"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li class="album">
+          <h4 class="album-title">Ghost Gardens</h4>
+
+          <table class="tracks-table">
+            <thead>
+              <tr>
+                <th>Track</th>
+                <th>Time</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Rip Me Apart</td>
+                <td>3:02</td>
+                <td>
+                  <a href="#" aria-label="Play Rip Me Apart"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Dig</td>
+                <td>2:54</td>
+                <td>
+                  <a href="#" aria-label="Play Dig"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Tremor</td>
+                <td>2:02</td>
+                <td>
+                  <a href="#" aria-label="Play Tremor"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li class="album">
+          <h4 class="album-title">Ghost Gardens</h4>
+
+          <table class="tracks-table">
+            <thead>
+              <tr>
+                <th>Track</th>
+                <th>Time</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Rip Me Apart</td>
+                <td>3:02</td>
+                <td>
+                  <a href="#" aria-label="Play Rip Me Apart"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Dig</td>
+                <td>2:54</td>
+                <td>
+                  <a href="#" aria-label="Play Dig"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Tremor</td>
+                <td>2:02</td>
+                <td>
+                  <a href="#" aria-label="Play Tremor"
+                    ><svg class="play-icon" width="24" height="24">
+                      <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+    </section> -->
+
+
+    <div class="container mobile-menu">
+  <!-- is-open -->
+  <div class="mobile-top-line">
+    <svg class="logo" width="119" height="51">
+      <use href="../assets/icons/sprite.svg#icon-logo1"></use>
+    </svg>
+    <button type="button" class="menu-close-btn">
+      <svg class="close-icon" width="24" height="24">
+        <use href="../assets/icons/sprite.svg#icon-x"></use>
+      </svg>
+    </button>
+  </div>
+  <ul class="menu-list">
+    <li class="menu-item"><a class="menu-link" href="#artist">Artists</a></li>
+    <li class="menu-item"><a class="menu-link" href="#about">About Us</a></li>
+    <li class="menu-item"><a class="menu-link" href="#reviews">Reviews</a></li>
+  </ul>
+</div>
+
+
+    <dialog class="feedback-modal">
+  <div class="feedback-modal-content">
+    <button type="button" class="menu-close-btn js-close-btn">
+      <svg class="close-icon" width="32" height="32">
+        <use href="../assets/icons/sprite.svg#icon-x"></use>
+      </svg>
+    </button>
+    <h2 id="feedback-title" class="feedback-title">Submit feedback</h2>
+    <form class="feedback-form" autocomplete="on">
+      <div class="form-field">
+        <label class="feedback-label" for="feedback-name">Name</label>
+        <input
+          class="feedback-input"
+          id="feedback-name"
+          name="name"
+          type="text"
+          placeholder="Emily"
+          required
+        />
+      </div>
+
+      <div class="form-field">
+        <label class="feedback-label" for="feedback-message">Message</label>
+        <textarea
+          class="feedback-textarea"
+          id="feedback-message"
+          name="message"
+          rows="5"
+          placeholder="Type your message..."
+          required
+        ></textarea>
+      </div>
+
+      <div class="rating">
+        <div class="rating-star" id="rating"></div>
+      </div>
+
+      <button class="feedback-submit btn-hover" type="submit" disabled>
+        Submit
+      </button>
+    </form>
+  </div>
+</dialog>
+
+
+  </body>
 </html>
