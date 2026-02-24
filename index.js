@@ -62,7 +62,7 @@ import{a as x,S as X,R,i as L,O as B}from"./assets/vendor-9FENM4gb.js";(function
             </p>
             <button class="artist-card-link js-learn-more-btn" type="button" data-artist-id="${e}">
               Learn More<svg class="icon icon-play" width="20" height="20">
-                <use href="../assets/icons/sprite.svg#icon-play"></use>
+                <use href="/assets/icons/sprite.svg#icon-play"></use>
               </svg>
             </button>
           </div>
@@ -93,7 +93,7 @@ import{a as x,S as X,R,i as L,O as B}from"./assets/vendor-9FENM4gb.js";(function
                           <a href="${r.movie}" target="_blank"
                              aria-label="Play ${r.strTrack}">
                             <svg class="play-icon" width="24" height="24">
-                              <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+                              <use href="/assets/icons/sprite.svg#icon-youtube"></use>
                             </svg>
                           </a>
                         `:""}
