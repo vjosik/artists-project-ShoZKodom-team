@@ -7,13 +7,13 @@ export function examplTost(
 ) {
   iziToast.show({
     title: error.name,
-    titleColor: '#ee56fc',
+    titleColor: '#fff',
     titleSize: '24px',
     message: error.message,
-    messageColor: '#dfaae480',
+    messageColor: '#fff',
     messageSize: '18px',
-    backgroundColor: '#23132B',
-    position: 'topCenter', //'bottomRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+    backgroundColor: '#764191',
+    position: 'bottomRight', //'bottomRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
     theme: 'dark', // dark light
     // color: 'red', // blue, red, green, yellow
     icon: 'error-circle.svg',
