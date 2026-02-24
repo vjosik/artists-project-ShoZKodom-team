@@ -9,6 +9,7 @@ import { getPaginationParams, nextPage } from './pagination';
 
 const list = document.querySelector('.js-artists');
 const loadMoreBtn = document.querySelector('.load-more-btn');
+let isLoadingArtists = false;
 
 export function loadArtistCard(artist) {
   return artist.map(createCardMarkup).join('');
@@ -45,25 +46,6 @@ function createCardMarkup({
         </li>`;
 }
 
-// export async function renderArtist(params) {
-//   const listArtist = document.querySelector('.js-artists');
-//   if (!listArtist) return;
-
-//   const res = await fetchArtists(params);
-//   // console.log('response:', res);
-
-//   const artists = res.artists;
-//   // listArtist.innerHTML = loadArtistCard(artists);
-//   listArtist.insertAdjacentHTML('beforeend', loadArtistCard(artists));
-
-//   if (loadMoreBtn) {
-//     if (artists.length < params.limit) {
-//       loadMoreBtn.classList.add('is-disabled');
-//     } else {
-//       loadMoreBtn.classList.remove('is-disabled');
-//     }
-//   }
-// }
 export async function renderArtist(params) {
   const listArtist = document.querySelector('.js-artists');
   if (!listArtist) return;
@@ -127,6 +109,8 @@ if (list) renderArtist({ limit: ARTIST_LIMIT, page: DEFAULT_PAGE });
 
 if (loadMoreBtn) {
   loadMoreBtn.addEventListener('click', async () => {
+    if (isLoadingArtists || loadMoreBtn.classList.contains('is-disabled'))
+      return;
     if (loadMoreBtn.classList.contains('is-disabled')) return;
 
     nextPage();
