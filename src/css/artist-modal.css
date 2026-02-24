@@ -6,19 +6,14 @@
   border-radius: 16px;
   outline: none;
 
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.6);
   color: inherit;
 }
 
 .artist-modal::backdrop {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
   transition: background-color 0.3s ease-in;
 }
-
-.artist-modal[open]::backdrop {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
 .artist-modal-content {
   padding: 52px 8px;
   max-width: 288px;
