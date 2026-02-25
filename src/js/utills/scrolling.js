@@ -61,3 +61,4 @@ export function unlockBodyScroll() {
 document.addEventListener('DOMContentLoaded', () => {
   initBodyScroll(document.body);
 });
+
