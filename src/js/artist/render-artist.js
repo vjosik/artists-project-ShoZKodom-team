@@ -36,7 +36,7 @@ function createCardMarkup({
             <ul class="tag-list">
               ${genres.map(genre => `<li class="tags">${genre}</li>`).join('')}
             </ul>
-            <h3 class="artist-card-name">${strArtist ?? 'Unknown Artist'}</h3>
+            <h4 class="artist-card-name">${strArtist ?? 'Unknown Artist'}</h4>
             <p class="artist-card-desc">
              ${strBiographyEN ?? 'No biography available'}
             </p>
@@ -87,13 +87,11 @@ export async function renderArtist(params) {
     if (loadMoreBtn) loadMoreBtn.style.display = '';
 
     if (loadMoreBtn) {
-      
       if (artists.length < params.limit) {
         loadMoreBtn.classList.add('is-disabled');
       } else {
         loadMoreBtn.classList.remove('is-disabled');
       }
-      
     }
   } catch (error) {
     clearTimeout(timeoutId);
@@ -114,7 +112,7 @@ if (list) renderArtist({ limit: ARTIST_LIMIT, page: DEFAULT_PAGE });
 
 if (loadMoreBtn) {
   loadMoreBtn.addEventListener('click', async () => {
-    showLoader(document.body)
+    showLoader(document.body);
     if (isLoadingArtists || loadMoreBtn.classList.contains('is-disabled'))
       return;
     if (loadMoreBtn.classList.contains('is-disabled')) return;
@@ -122,6 +120,6 @@ if (loadMoreBtn) {
     nextPage();
     const params = getPaginationParams();
     await renderArtist(params);
-    hideLoader(document.body)
+    hideLoader(document.body);
   });
 }
